@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MATRIX TERMINAL - SETUP</title>
+    <style>
+        body {
+            background: #020617;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 520px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 32px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border-radius: 14px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            margin: 0 0 5px;
+            color: #fff;
+        }
+
+        p.subtitle {
+            font-size: 9px;
+            color: #64748b;
+            margin: 0 0 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .grid-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            font-size: 9px;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            height: 48px;
+            padding: 0 15px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #0ea5e9;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        }
+
+        .dna-box {
+            background: rgba(14, 165, 233, 0.05);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 5px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #0ea5e9;
+            border: 1px dashed rgba(14, 165, 233, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            width: 100%;
+            height: 54px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border: none;
+            border-radius: 16px;
+            color: white;
+            font-weight: 800;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 0.1em;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 10px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">M</div>
+        <h1>TERMINAL NODE</h1>
+        <p class="subtitle">Matrix DMS Sync Environment</p>
+
+        <div class="grid-form">
+            <div class="form-group">
+                <label>Server IP / 地址</label>
+                <input type="text" id="serverIp" placeholder="127.0.0.1">
+            </div>
+            <div class="form-group">
+                <label>Server Port / 端口</label>
+                <input type="number" id="serverPort" placeholder="3003">
+            </div>
+            <div class="form-group">
+                <label>Terminal Name / 终端名称</label>
+                <input type="text" id="terminalName" placeholder="例如：东门大屏-01">
+            </div>
+            <div class="form-group">
+                <label>Sync Group / 分组标识</label>
+                <input type="text" id="groupId" placeholder="例如：group-01">
+            </div>
+            <div class="form-group full">
+                <label>Terminal ID / 终端编号 (可选)</label>
+                <input type="text" id="terminalId" placeholder="留空则使用硬件DNA">
+            </div>
+        </div>
+
+        <div class="form-group full">
+            <label>Hardware DNA / 硬件指纹</label>
+            <div class="dna-box">
+                <span id="dnaText">SCANNING...</span>
+                <span style="opacity: 0.3;">🔒 READY</span>
+            </div>
+        </div>
+
+        <button id="saveBtn">SYNC TO MATRIX</button>
+
+        <div class="status">
+            <div class="dot"></div>
+            SYSTEM ENGINE SECURED
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        // 加载现有配置
+        ipcRenderer.invoke('get-config').then(config => {
+            if (config.serverIp) document.getElementById('serverIp').value = config.serverIp;
+            if (config.serverPort) document.getElementById('serverPort').value = config.serverPort;
+            if (config.terminalName) document.getElementById('terminalName').value = config.terminalName;
+            if (config.terminalId) document.getElementById('terminalId').value = config.terminalId;
+            if (config.groupId) document.getElementById('groupId').value = config.groupId;
+        });
+
+        ipcRenderer.invoke('get-mac').then(mac => {
+            document.getElementById('dnaText').innerText = mac.toUpperCase();
+        });
+
+        document.getElementById('saveBtn').onclick = async () => {
+            const btn = document.getElementById('saveBtn');
+            const originalText = btn.innerText;
+            btn.innerText = 'CHECKING QUOTA...';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+
+            const serverIp = document.getElementById('serverIp').value || '127.0.0.1';
+            const serverPort = document.getElementById('serverPort').value || '3003';
+            const mac = document.getElementById('dnaText').innerText;
+
+            try {
+                // [v8.5.1] 增加授权配额预检，防止超出授权导致黑屏
+                const checkRes = await fetch(`http://${serverIp}:${serverPort}/api/sys/check-quota?mac=${mac}`);
+                const checkData = await checkRes.json();
+
+                if (!checkRes.ok) {
+                    alert(`绑定失败: ${checkData.message || checkData.reason || '未知错误'}`);
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    return;
+                }
+
+                btn.innerText = 'SYNCING TO MATRIX...';
+                const data = {
+                    serverIp: serverIp,
+                    serverPort: serverPort,
+                    terminalName: document.getElementById('terminalName').value || '播放终端',
+                    terminalId: document.getElementById('terminalId').value || '',
+                    groupId: document.getElementById('groupId').value || 'default'
+                };
+
+                setTimeout(() => {
+                    ipcRenderer.send('save-setup', data);
+                }, 800);
+
+            } catch (err) {
+                alert(`无法连接到服务器: ${err.message}\n请检查网络与服务器 IP 地址。`);
+                btn.innerText = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+            }
+        };
+    </script>
+</body>
+
+</html>
