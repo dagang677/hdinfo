@@ -1,0 +1,5 @@
+{
+  "name": "Matrix DMS Console",
+  "description": "A high-end Digital Management System console with real backend storage integration, featuring asset lifecycle management, template engine, and terminal cluster monitoring.",
+  "requestFramePermissions": []
+}
