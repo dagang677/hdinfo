@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MATRIX SERVER - SETUP</title>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.4);
+            --bg: #0f172a;
+            --card: #1e293b;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-p: #f8fafc;
+            --text-s: #94a3b8;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-p);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 400px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            -webkit-app-region: drag;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border-radius: 8px;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 16px;
+            box-shadow: 0 4px 10px var(--primary-glow);
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: 800;
+            margin: 0;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 9px;
+            color: var(--text-s);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+            text-align: left;
+            -webkit-app-region: no-drag;
+        }
+
+        label {
+            display: block;
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-s);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            height: 36px;
+            padding: 0 10px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+        }
+
+        .role-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            -webkit-app-region: no-drag;
+        }
+
+        .role-btn {
+            flex: 1;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-s);
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .role-btn.active {
+            border-color: var(--primary);
+            background: rgba(14, 165, 233, 0.1);
+            color: #fff;
+        }
+
+        .license-box {
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px dashed var(--primary-glow);
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .license-info {
+            font-size: 9px;
+            color: var(--text-s);
+            margin-top: 2px;
+        }
+
+        button.primary-btn {
+            width: 100%;
+            height: 44px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            margin-top: 16px;
+            cursor: pointer;
+            -webkit-app-region: no-drag;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">M</div>
+            <h1>MATRIX SERVER</h1>
+            <div class="subtitle">System Initialization</div>
+        </div>
+
+        <label>Node Role / 节点角色</label>
+        <div class="role-selector">
+            <div class="role-btn active" id="btnMaster">Master (主)</div>
+            <div class="role-btn" id="btnSecondary">Secondary (从)</div>
+        </div>
+
+        <div class="form-group">
+            <label id="ipLabel">Server IP / 终端连接地址</label>
+            <input type="text" id="serverIp" placeholder="127.0.0.1" value="127.0.0.1">
+        </div>
+
+        <div class="form-group">
+            <label>License Authorization / 导入授权文件</label>
+            <div class="license-box" id="licenseDropZone">
+                <div id="licenseStat" style="font-size: 11px; font-weight: 700;">点击上传 .dat 授权文件</div>
+                <div class="license-info" id="licenseSubtext">可选：可在系统运行后导入</div>
+                <input type="file" id="licenseFile" accept=".dat" style="display: none;">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Project Name / 项目标识 (选填)</label>
+            <input type="text" id="projectName" placeholder="南京XX项目">
+        </div>
+
+        <button class="primary-btn" id="saveBtn">完成初始化并启动</button>
+    </div>
+
+    <script>
+        // 极致兼容性获取 IPC
+        let ipc = null;
+        try {
+            if (window.electron && window.electron.ipcRenderer) {
+                ipc = window.electron.ipcRenderer;
+            } else if (typeof require !== 'undefined') {
+                ipc = require('electron').ipcRenderer;
+            }
+        } catch (e) { }
+
+        if (!ipc) {
+            document.body.insertAdjacentHTML('afterbegin', '<div style="background:red; color:white; padding:4px; position:fixed; top:0; left:0; font-size:9px; z-index:9999; width:100%; text-align:center;">IPC Error: Communication link not established</div>');
+        }
+
+        let selectedRole = 'master';
+        let licenseData = null;
+
+        function setRole(role) {
+            selectedRole = role;
+            document.getElementById('btnMaster').className = role === 'master' ? 'role-btn active' : 'role-btn';
+            document.getElementById('btnSecondary').className = role === 'secondary' ? 'role-btn active' : 'role-btn';
+
+            // 动态切换 IP 标签，解决冗余感
+            const label = document.getElementById('ipLabel');
+            if (role === 'master') {
+                label.innerText = 'Server IP / 本机地址 (终端直连)';
+            } else {
+                label.innerText = 'Master IP / 主控端服务器地址';
+            }
+        }
+
+        document.getElementById('btnMaster').onclick = () => setRole('master');
+        document.getElementById('btnSecondary').onclick = () => setRole('secondary');
+
+        // 文件处理
+        const fileInput = document.getElementById('licenseFile');
+        document.getElementById('licenseDropZone').onclick = () => fileInput.click();
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const rawData = event.target.result;
+                licenseData = rawData;
+
+                // [v8.6.1] 解析授权文件中的项目名称并自动填入
+                try {
+                    const payloadB64 = rawData.split('|')[1];
+                    if (payloadB64) {
+                        const payload = atob(payloadB64);
+                        const parts = payload.split(':');
+                        if (parts.length > 0 && parts[0]) {
+                            const projectName = decodeURIComponent(escape(parts[0]));
+                            document.getElementById('projectName').value = projectName;
+                            console.log("Auto-filled project name from license:", projectName);
+                        }
+                    }
+                } catch (err) {
+                    console.warn("Failed to parse project name from license:", err);
+                }
+
+                document.getElementById('licenseStat').innerText = '✅ ' + file.name;
+                document.getElementById('licenseStat').style.color = '#10b981';
+            };
+            reader.readAsText(file);
+        };
+
+        // 保存逻辑
+        document.getElementById('saveBtn').onclick = () => {
+            const ipValue = document.getElementById('serverIp').value.trim();
+            const projectName = document.getElementById('projectName').value.trim() || 'Default Project';
+
+            if (!ipValue) {
+                alert('请输入有效的 IP 地址');
+                return;
+            }
+
+            if (!ipc) {
+                alert('无法与主程序通信，请确认程序运行环境。');
+                return;
+            }
+
+            const payload = {
+                serverIp: selectedRole === 'master' ? ipValue : '',
+                masterIp: selectedRole === 'secondary' ? ipValue : '',
+                projectName,
+                serverRole: selectedRole,
+                licenseData
+            };
+
+            ipc.send('save-setup', payload);
+            document.getElementById('saveBtn').innerText = '正在初始化...';
+            document.getElementById('saveBtn').disabled = true;
+        };
+    </script>
+</body>
+
+</html>
