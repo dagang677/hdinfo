@@ -1,0 +1,29 @@
+{
+    "name": "matrix-license-tool",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder --win"
+    },
+    "build": {
+        "appId": "com.matrix.license.gen",
+        "productName": "MatrixLicenseGenerator",
+        "win": {
+            "target": [
+                "portable"
+            ],
+            "icon": "icon.ico"
+        },
+        "directories": {
+            "output": "dist"
+        }
+    },
+    "dependencies": {
+        "electron-log": "^5.0.0"
+    },
+    "devDependencies": {
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.1"
+    }
+}

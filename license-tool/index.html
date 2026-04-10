@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MATRIX SECURITY - License Generator</title>
+    <style>
+        :root {
+            --bg: #0a0f1d;
+            --card: rgba(255, 255, 255, 0.03);
+            --accent: #0ea5e9;
+            --text: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .titlebar {
+            height: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            -webkit-app-region: drag;
+        }
+
+        .window-controls {
+            -webkit-app-region: no-drag;
+            display: flex;
+            gap: 15px;
+        }
+
+        .control-btn {
+            cursor: pointer;
+            opacity: 0.5;
+            font-size: 14px;
+        }
+
+        .control-btn:hover {
+            opacity: 1;
+        }
+
+        .close:hover {
+            color: #f43f5e;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+        }
+
+        header p {
+            font-size: 10px;
+            color: #64748b;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px border;
+            border-color: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 10px;
+            font-weight: 900;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        input,
+        select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            height: 50px;
+            padding: 0 15px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quota-input {
+            width: 80px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 8px;
+            height: 40px;
+            padding: 0 5px;
+            text-align: center;
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 18px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .quota-input:focus {
+            border-color: var(--accent);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+        }
+
+        /* 隐藏数字输入的微调按钮 */
+        .quota-input::-webkit-inner-spin-button,
+        .quota-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .secret-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        .refresh-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .refresh-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .generate-btn {
+            width: 100%;
+            height: 70px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.5);
+        }
+
+        .generate-btn:active {
+            transform: scale(0.98);
+        }
+
+        .status {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #10b981;
+        }
+
+        .error {
+            color: #f43f5e;
+        }
+
+        /* 背景装饰 */
+        .blur-dot {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blur-dot" style="top: -100px; left: -100px;"></div>
+    <div class="blur-dot" style="bottom: -100px; right: -100px;"></div>
+
+    <div class="titlebar">
+        <div style="font-size: 10px; font-weight: 900; opacity: 0.5;">MATRIX 安全核心 - 授权分发系统</div>
+        <div class="window-controls">
+            <span class="control-btn" id="minBtn">_</span>
+            <span class="control-btn close" id="closeBtn">✕</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>数字授权制作工具</h1>
+            <p>厂商专用安全分发控制台</p>
+        </header>
+
+        <div class="main-grid">
+            <div class="card">
+                <div class="form-group">
+                    <label>项目名称 / 客户标识</label>
+                    <input type="text" id="projectName" placeholder="例如：南京XX智慧展厅项目">
+                </div>
+                <div class="form-group">
+                    <label>授权有效期</label>
+                    <input type="date" id="expiryDate">
+                </div>
+                <div class="form-group">
+                    <label>终端授权名额 (配额)</label>
+                    <div class="slider-container">
+                        <input type="range" id="quota" min="1" max="500" value="50">
+                        <input type="number" id="quotaInput" class="quota-input" value="50" min="1" max="500">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="form-group">
+                    <label>项目通信主密钥 (数据队种子)</label>
+                    <div class="secret-box">
+                        <input type="text" id="secret" readonly>
+                        <button class="refresh-btn" id="genSecret" title="重新生成密钥">↻</button>
+                    </div>
+                </div>
+                <button class="generate-btn" id="generateBtn">立即生成授权文件</button>
+                <div id="statusMsg" class="status">系统已就绪，请输入项目参数</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        // 设置默认日期为一年后
+        const d = new Date();
+        d.setFullYear(d.getFullYear() + 1);
+        document.getElementById('expiryDate').value = d.toISOString().split('T')[0];
+
+        // 密钥生成
+        function generateRandomSecret() {
+            return 'SEC_' + Math.random().toString(36).substring(2, 10).toUpperCase();
+        }
+        document.getElementById('secret').value = generateRandomSecret();
+        document.getElementById('genSecret').onclick = () => {
+            document.getElementById('secret').value = generateRandomSecret();
+        };
+
+        // 配额联动逻辑
+        const quotaSlider = document.getElementById('quota');
+        const quotaInput = document.getElementById('quotaInput');
+
+        quotaSlider.oninput = (e) => {
+            quotaInput.value = e.target.value;
+        };
+
+        quotaInput.oninput = (e) => {
+            let val = parseInt(e.target.value);
+            if (val > 500) val = 500;
+            if (val < 1) val = 1;
+            if (isNaN(val)) val = 1;
+            quotaSlider.value = val;
+            quotaInput.value = val;
+        };
+
+        // 窗口控制
+        document.getElementById('closeBtn').onclick = () => ipcRenderer.send('close-app');
+        document.getElementById('minBtn').onclick = () => ipcRenderer.send('minimize-app');
+
+        // 生成逻辑
+        document.getElementById('generateBtn').onclick = () => {
+            const projectName = document.getElementById('projectName').value.trim();
+            const expiry = document.getElementById('expiryDate').value;
+            const quota = quotaInput.value;
+            const secret = document.getElementById('secret').value;
+
+            if (!projectName) {
+                showStatus('请输入项目名称', 'error');
+                return;
+            }
+
+            document.getElementById('generateBtn').innerText = '正在执行加密生成...';
+            ipcRenderer.send('generate-license', { projectName, expiry, quota, secret });
+        };
+
+        ipcRenderer.on('generate-success', (event, data) => {
+            document.getElementById('generateBtn').innerText = '立即生成授权文件';
+            showStatus(`导出成功: ${data.fileName}\n记录已同步至 history.csv`, 'success');
+        });
+
+        ipcRenderer.on('generate-error', (event, msg) => {
+            document.getElementById('generateBtn').innerText = '立即生成授权文件';
+            showStatus(`生成错误: ${msg}`, 'error');
+        });
+
+        function showStatus(msg, type) {
+            const el = document.getElementById('statusMsg');
+            el.innerText = msg;
+            el.className = 'status ' + type;
+        }
+    </script>
+</body>
+
+</html>
