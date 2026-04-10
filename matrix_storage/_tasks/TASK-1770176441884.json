@@ -1,0 +1,31 @@
+{
+  "name": "11",
+  "type": "broadcast",
+  "frequency": "daily",
+  "targets": [
+    "NODE-858",
+    "NODE-01"
+  ],
+  "startTime": "11:41",
+  "endTime": "11:50",
+  "selectedDays": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "content": {
+    "broadcast": {
+      "text": "紧急消息...114525663",
+      "bgColor": "#0ea5e9",
+      "color": "#ffffff",
+      "speed": 5,
+      "bgOpacity": 90,
+      "fontSize": 40
+    }
+  },
+  "id": "TASK-1770176441884",
+  "status": "active",
+  "timestamp": "2026-02-04T03:40:41.884Z"
+}

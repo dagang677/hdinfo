@@ -1,0 +1,52 @@
+{
+  "id": "T-1769671441139",
+  "name": "未命名矩阵布局2",
+  "resolution": "1920x1080",
+  "orientation": "landscape",
+  "bgConfig": {
+    "type": "color",
+    "value": "#f8fafc",
+    "opacity": 100
+  },
+  "layers": [
+    {
+      "id": "L-1769671443486",
+      "name": "新媒体层",
+      "type": "media",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 100,
+      "z": 0,
+      "opacity": 100,
+      "config": {
+        "playlist": [
+          {
+            "id": "ITEM-1769671452268-0.9728761306913919",
+            "name": "IMG_8892.JPG",
+            "type": "IMG",
+            "duration": {
+              "min": 0,
+              "sec": 3
+            },
+            "thumb": "http://127.0.0.1:3000/api/assets/stream?filename=IMG_8892.JPG",
+            "order": 0
+          },
+          {
+            "id": "ITEM-1769671458048-0.061512309878331894",
+            "name": "IMG_8895.JPG",
+            "type": "IMG",
+            "duration": {
+              "min": 0,
+              "sec": 3
+            },
+            "thumb": "http://127.0.0.1:3000/api/assets/stream?filename=IMG_8895.JPG",
+            "order": 1
+          }
+        ]
+      },
+      "playlist": []
+    }
+  ],
+  "lastModified": "2026-01-29T07:24:26.026Z"
+}

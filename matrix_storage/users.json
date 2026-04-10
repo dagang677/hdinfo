@@ -1,0 +1,17 @@
+[
+  {
+    "id": "u-super",
+    "account": "000000",
+    "name": "超级管理员",
+    "roleId": "role-admin",
+    "password": "999999",
+    "isSuper": true
+  },
+  {
+    "roleId": "role-1770191009648",
+    "account": "000001",
+    "name": "测试账号",
+    "id": "user-1770191028828",
+    "password": "123456"
+  }
+]

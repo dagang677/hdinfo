@@ -1,0 +1,34 @@
+{
+  "name": "1030",
+  "type": "asset",
+  "frequency": "daily",
+  "targets": [
+    "NODE-858",
+    "NODE-01"
+  ],
+  "startTime": "11:12",
+  "endTime": "11:30",
+  "selectedDays": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "content": {
+    "broadcast": {
+      "text": "紧急消息...",
+      "bgColor": "#0ea5e9",
+      "color": "#ffffff",
+      "speed": 5,
+      "bgOpacity": 90,
+      "fontSize": 40
+    },
+    "asset": "20251112100926.mp4",
+    "templateId": "T-1770001994858",
+    "templateName": "视频飞字"
+  },
+  "id": "TASK-1770171276999",
+  "status": "active",
+  "timestamp": "2026-02-04T03:11:52.105Z"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "T-1769502055320",
+  "name": "未命名矩阵布局",
+  "resolution": "1920x1080",
+  "orientation": "landscape",
+  "bgConfig": {
+    "type": "color",
+    "value": "#ffffff",
+    "opacity": 100
+  },
+  "layers": [
+    {
+      "id": "L-1769502089663",
+      "name": "新网页切片",
+      "type": "web",
+      "x": 0,
+      "y": 0,
+      "w": 155.84716796875,
+      "h": 137.43489583333334,
+      "z": 0,
+      "opacity": 100,
+      "config": {
+        "color": "#ffffff",
+        "bgOpacity": 0,
+        "url": "https://news.cctv.com/?spm=C96370.PPDB2vhvSivD.E59hodVIdh2C.3",
+        "variant": "static",
+        "speed": 1,
+        "zoom": 0.55,
+        "offsetX": 13,
+        "offsetY": 0,
+        "offsetUp": 200,
+        "offsetLeft": 0,
+        "size": 28,
+        "content": "Matrix New Text Frame"
+      }
+    }
+  ],
+  "lastModified": "2026-01-29T06:52:21.730Z"
+}

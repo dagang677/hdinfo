@@ -1,0 +1,41 @@
+{
+  "id": "T-1770001290447",
+  "name": "竖屏1",
+  "resolution": "1920x1080",
+  "orientation": "portrait",
+  "bgConfig": {
+    "type": "color",
+    "value": "#f8fafc",
+    "opacity": 100
+  },
+  "layers": [
+    {
+      "id": "L-1770001292755",
+      "name": "新媒体层",
+      "type": "media",
+      "x": 0.36960829141899154,
+      "y": 0,
+      "w": 99.63039170858102,
+      "h": 100,
+      "z": 0,
+      "opacity": 100,
+      "config": {
+        "playlist": [
+          {
+            "id": "ITEM-1770001848578-0.7317864240082169",
+            "name": "xtdowner.com 252372 视频链接.mp4",
+            "type": "VID",
+            "duration": {
+              "min": 0,
+              "sec": 15
+            },
+            "thumb": "http://127.0.0.1:3002/api/assets/stream?filename=xtdowner.com%20252372%20%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5.mp4",
+            "order": 0
+          }
+        ]
+      },
+      "playlist": []
+    }
+  ],
+  "lastModified": "2026-02-02T03:11:36.615Z"
+}

@@ -1,0 +1,310 @@
+[
+  {
+    "id": 1770193875528,
+    "type": "PLAY_LIST",
+    "payload": [
+      {
+        "id": "PROG-1770193565486",
+        "type": "template",
+        "name": "视频飞字",
+        "duration": {
+          "h": 0,
+          "m": 0,
+          "s": 15
+        },
+        "refId": "T-1770001994858",
+        "category": "矩阵模板"
+      }
+    ]
+  },
+  {
+    "id": 1770193875571,
+    "type": "PLAY_LIST",
+    "payload": [
+      {
+        "id": "PROG-1770193565486",
+        "type": "template",
+        "name": "视频飞字",
+        "duration": {
+          "h": 0,
+          "m": 0,
+          "s": 15
+        },
+        "refId": "T-1770001994858",
+        "category": "矩阵模板"
+      }
+    ]
+  },
+  {
+    "id": 1770193875596,
+    "type": "UPDATE_TASKS",
+    "payload": [
+      {
+        "name": "1030",
+        "type": "asset",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:12",
+        "endTime": "11:30",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 5,
+            "bgOpacity": 90,
+            "fontSize": 40
+          },
+          "asset": "20251112100926.mp4",
+          "templateId": "T-1770001994858",
+          "templateName": "视频飞字"
+        },
+        "id": "TASK-1770171276999",
+        "status": "active",
+        "timestamp": "2026-02-04T03:11:52.105Z"
+      },
+      {
+        "name": "飞字",
+        "type": "template",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:34",
+        "endTime": "11:40",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...1253669215854146652",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 2,
+            "bgOpacity": 90,
+            "fontSize": 40
+          },
+          "templateId": "T-1770001994858",
+          "templateName": "视频飞字"
+        },
+        "id": "TASK-1770174932563",
+        "status": "active",
+        "timestamp": "2026-02-04T03:33:46.223Z"
+      },
+      {
+        "name": "11",
+        "type": "broadcast",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:41",
+        "endTime": "11:50",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...114525663",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 5,
+            "bgOpacity": 90,
+            "fontSize": 40
+          }
+        },
+        "id": "TASK-1770176441884",
+        "status": "active",
+        "timestamp": "2026-02-04T03:40:41.884Z"
+      },
+      {
+        "name": "888",
+        "type": "asset",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:43",
+        "endTime": "11:50",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 5,
+            "bgOpacity": 90,
+            "fontSize": 40
+          },
+          "asset": "高仿双胞胎-射雕.mp4"
+        },
+        "id": "TASK-1770176550249",
+        "status": "active",
+        "timestamp": "2026-02-04T03:42:30.249Z"
+      }
+    ]
+  },
+  {
+    "id": 1770193875630,
+    "type": "UPDATE_TASKS",
+    "payload": [
+      {
+        "name": "1030",
+        "type": "asset",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:12",
+        "endTime": "11:30",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 5,
+            "bgOpacity": 90,
+            "fontSize": 40
+          },
+          "asset": "20251112100926.mp4",
+          "templateId": "T-1770001994858",
+          "templateName": "视频飞字"
+        },
+        "id": "TASK-1770171276999",
+        "status": "active",
+        "timestamp": "2026-02-04T03:11:52.105Z"
+      },
+      {
+        "name": "飞字",
+        "type": "template",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:34",
+        "endTime": "11:40",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...1253669215854146652",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 2,
+            "bgOpacity": 90,
+            "fontSize": 40
+          },
+          "templateId": "T-1770001994858",
+          "templateName": "视频飞字"
+        },
+        "id": "TASK-1770174932563",
+        "status": "active",
+        "timestamp": "2026-02-04T03:33:46.223Z"
+      },
+      {
+        "name": "11",
+        "type": "broadcast",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:41",
+        "endTime": "11:50",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...114525663",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 5,
+            "bgOpacity": 90,
+            "fontSize": 40
+          }
+        },
+        "id": "TASK-1770176441884",
+        "status": "active",
+        "timestamp": "2026-02-04T03:40:41.884Z"
+      },
+      {
+        "name": "888",
+        "type": "asset",
+        "frequency": "daily",
+        "targets": [
+          "NODE-858",
+          "NODE-01"
+        ],
+        "startTime": "11:43",
+        "endTime": "11:50",
+        "selectedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "content": {
+          "broadcast": {
+            "text": "紧急消息...",
+            "bgColor": "#0ea5e9",
+            "color": "#ffffff",
+            "speed": 5,
+            "bgOpacity": 90,
+            "fontSize": 40
+          },
+          "asset": "高仿双胞胎-射雕.mp4"
+        },
+        "id": "TASK-1770176550249",
+        "status": "active",
+        "timestamp": "2026-02-04T03:42:30.249Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "role-admin",
+    "name": "系统管理员",
+    "permissions": [
+      "dashboard",
+      "assets",
+      "templates",
+      "terminals",
+      "tasks",
+      "logs",
+      "users",
+      "system-settings"
+    ]
+  },
+  {
+    "permissions": [
+      "dashboard",
+      "templates",
+      "assets",
+      "terminals"
+    ],
+    "name": "测试账号",
+    "id": "role-1770191009648"
+  }
+]

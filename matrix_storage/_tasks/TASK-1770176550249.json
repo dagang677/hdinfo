@@ -1,0 +1,32 @@
+{
+  "name": "888",
+  "type": "asset",
+  "frequency": "daily",
+  "targets": [
+    "NODE-858",
+    "NODE-01"
+  ],
+  "startTime": "11:43",
+  "endTime": "11:50",
+  "selectedDays": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "content": {
+    "broadcast": {
+      "text": "紧急消息...",
+      "bgColor": "#0ea5e9",
+      "color": "#ffffff",
+      "speed": 5,
+      "bgOpacity": 90,
+      "fontSize": 40
+    },
+    "asset": "高仿双胞胎-射雕.mp4"
+  },
+  "id": "TASK-1770176550249",
+  "status": "active",
+  "timestamp": "2026-02-04T03:42:30.249Z"
+}

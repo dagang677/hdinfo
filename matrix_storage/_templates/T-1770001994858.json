@@ -1,0 +1,62 @@
+{
+  "id": "T-1770001994858",
+  "name": "视频飞字",
+  "resolution": "1920x1080",
+  "orientation": "landscape",
+  "bgConfig": {
+    "type": "color",
+    "value": "#f8fafc",
+    "opacity": 100
+  },
+  "layers": [
+    {
+      "id": "L-1770001998434",
+      "name": "新媒体层",
+      "type": "media",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 100,
+      "z": 0,
+      "opacity": 100,
+      "config": {
+        "playlist": [
+          {
+            "id": "ITEM-1770102983648-0.258084639938171",
+            "name": "你愿不愿意做我的搭档.mp4",
+            "type": "VID",
+            "duration": {
+              "min": 0,
+              "sec": 15
+            },
+            "thumb": "http://127.0.0.1:3003/api/assets/stream?filename=%E4%BD%A0%E6%84%BF%E4%B8%8D%E6%84%BF%E6%84%8F%E5%81%9A%E6%88%91%E7%9A%84%E6%90%AD%E6%A1%A3.mp4",
+            "order": 0,
+            "useSystemDuration": true
+          }
+        ]
+      },
+      "playlist": []
+    },
+    {
+      "id": "L-1770002016432",
+      "name": "新飞字层",
+      "type": "text",
+      "x": 0,
+      "y": 89.65546942291128,
+      "w": 100,
+      "h": 9.827734711455642,
+      "z": 1,
+      "opacity": 100,
+      "config": {
+        "color": "#df0c0c",
+        "bgColor": "#000000",
+        "bgOpacity": 40,
+        "size": 48,
+        "content": "删除模板时，系统会自动删除引用该模板的所有任务计划",
+        "speed": 1,
+        "variant": "marquee"
+      }
+    }
+  ],
+  "lastModified": "2026-02-03T07:16:29.921Z"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "T-1769755252892",
+  "name": "网页",
+  "resolution": "1920x1080",
+  "orientation": "landscape",
+  "bgConfig": {
+    "type": "color",
+    "value": "#f8fafc",
+    "opacity": 100
+  },
+  "layers": [
+    {
+      "id": "L-1769755262197",
+      "name": "新网页层",
+      "type": "web",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 100,
+      "z": 0,
+      "opacity": 100,
+      "config": {
+        "url": "https://news.cctv.com/?spm=C96370.PPDB2vhvSivD.E59hodVIdh2C.3",
+        "zoom": 1.77,
+        "offsetX": 0,
+        "offsetY": 0,
+        "offsetUp": 10,
+        "offsetLeft": 250,
+        "refreshRate": 600
+      }
+    }
+  ],
+  "lastModified": "2026-01-30T11:59:14.591Z"
+}

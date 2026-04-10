@@ -1,0 +1,205 @@
+[
+  {
+    "id": "T-1770001994858",
+    "name": "视频飞字",
+    "resolution": "1920x1080",
+    "orientation": "landscape",
+    "bgConfig": {
+      "type": "color",
+      "value": "#f8fafc",
+      "opacity": 100
+    },
+    "layers": [
+      {
+        "id": "L-1770001998434",
+        "name": "新媒体层",
+        "type": "media",
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 100,
+        "z": 0,
+        "opacity": 100,
+        "config": {
+          "playlist": [
+            {
+              "id": "ITEM-1770102983648-0.258084639938171",
+              "name": "你愿不愿意做我的搭档.mp4",
+              "type": "VID",
+              "duration": {
+                "min": 0,
+                "sec": 15
+              },
+              "thumb": "http://127.0.0.1:3003/api/assets/stream?filename=%E4%BD%A0%E6%84%BF%E4%B8%8D%E6%84%BF%E6%84%8F%E5%81%9A%E6%88%91%E7%9A%84%E6%90%AD%E6%A1%A3.mp4",
+              "order": 0,
+              "useSystemDuration": true
+            }
+          ]
+        },
+        "playlist": []
+      },
+      {
+        "id": "L-1770002016432",
+        "name": "新飞字层",
+        "type": "text",
+        "x": 0,
+        "y": 89.65546942291128,
+        "w": 100,
+        "h": 9.827734711455642,
+        "z": 1,
+        "opacity": 100,
+        "config": {
+          "color": "#df0c0c",
+          "bgColor": "#000000",
+          "bgOpacity": 40,
+          "size": 48,
+          "content": "删除模板时，系统会自动删除引用该模板的所有任务计划",
+          "speed": 1,
+          "variant": "marquee"
+        }
+      }
+    ],
+    "lastModified": "2026-02-03T07:16:29.921Z"
+  },
+  {
+    "id": "T-1770001909323",
+    "name": "图片3",
+    "resolution": "1920x1080",
+    "orientation": "landscape",
+    "bgConfig": {
+      "type": "color",
+      "value": "#f8fafc",
+      "opacity": 100
+    },
+    "layers": [
+      {
+        "id": "L-1770001911164",
+        "name": "新媒体层",
+        "type": "media",
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 100,
+        "z": 0,
+        "opacity": 100,
+        "config": {
+          "playlist": [
+            {
+              "id": "ITEM-1770120067287-0.8723268042241706",
+              "name": "IMG_8885.JPG",
+              "type": "IMG",
+              "duration": {
+                "min": 0,
+                "sec": 3
+              },
+              "thumb": "/api/assets/stream?filename=IMG_8885.JPG",
+              "order": 0,
+              "useSystemDuration": false
+            },
+            {
+              "id": "ITEM-1770120069866-0.12370743480093405",
+              "name": "IMG_8886.JPG",
+              "type": "IMG",
+              "duration": {
+                "min": 0,
+                "sec": 3
+              },
+              "thumb": "/api/assets/stream?filename=IMG_8886.JPG",
+              "order": 1,
+              "useSystemDuration": false
+            },
+            {
+              "id": "ITEM-1770120071473-0.6505102336442087",
+              "name": "IMG_8891.JPG",
+              "type": "IMG",
+              "duration": {
+                "min": 0,
+                "sec": 3
+              },
+              "thumb": "/api/assets/stream?filename=IMG_8891.JPG",
+              "order": 2,
+              "useSystemDuration": false
+            }
+          ]
+        },
+        "playlist": []
+      }
+    ],
+    "lastModified": "2026-02-03T12:01:27.392Z"
+  },
+  {
+    "id": "T-1770001290447",
+    "name": "竖屏1",
+    "resolution": "1920x1080",
+    "orientation": "portrait",
+    "bgConfig": {
+      "type": "color",
+      "value": "#f8fafc",
+      "opacity": 100
+    },
+    "layers": [
+      {
+        "id": "L-1770001292755",
+        "name": "新媒体层",
+        "type": "media",
+        "x": 0.36960829141899154,
+        "y": 0,
+        "w": 99.63039170858102,
+        "h": 100,
+        "z": 0,
+        "opacity": 100,
+        "config": {
+          "playlist": [
+            {
+              "id": "ITEM-1770001848578-0.7317864240082169",
+              "name": "xtdowner.com 252372 视频链接.mp4",
+              "type": "VID",
+              "duration": {
+                "min": 0,
+                "sec": 15
+              },
+              "thumb": "http://127.0.0.1:3002/api/assets/stream?filename=xtdowner.com%20252372%20%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5.mp4",
+              "order": 0
+            }
+          ]
+        },
+        "playlist": []
+      }
+    ],
+    "lastModified": "2026-02-02T03:11:36.615Z"
+  },
+  {
+    "id": "T-1769755252892",
+    "name": "网页",
+    "resolution": "1920x1080",
+    "orientation": "landscape",
+    "bgConfig": {
+      "type": "color",
+      "value": "#f8fafc",
+      "opacity": 100
+    },
+    "layers": [
+      {
+        "id": "L-1769755262197",
+        "name": "新网页层",
+        "type": "web",
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 100,
+        "z": 0,
+        "opacity": 100,
+        "config": {
+          "url": "https://news.cctv.com/?spm=C96370.PPDB2vhvSivD.E59hodVIdh2C.3",
+          "zoom": 1.77,
+          "offsetX": 0,
+          "offsetY": 0,
+          "offsetUp": 10,
+          "offsetLeft": 250,
+          "refreshRate": 600
+        }
+      }
+    ],
+    "lastModified": "2026-01-30T11:59:14.591Z"
+  }
+]

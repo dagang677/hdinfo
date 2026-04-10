@@ -1,0 +1,66 @@
+{
+  "id": "T-1770001909323",
+  "name": "图片3",
+  "resolution": "1920x1080",
+  "orientation": "landscape",
+  "bgConfig": {
+    "type": "color",
+    "value": "#f8fafc",
+    "opacity": 100
+  },
+  "layers": [
+    {
+      "id": "L-1770001911164",
+      "name": "新媒体层",
+      "type": "media",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 100,
+      "z": 0,
+      "opacity": 100,
+      "config": {
+        "playlist": [
+          {
+            "id": "ITEM-1770120067287-0.8723268042241706",
+            "name": "IMG_8885.JPG",
+            "type": "IMG",
+            "duration": {
+              "min": 0,
+              "sec": 3
+            },
+            "thumb": "/api/assets/stream?filename=IMG_8885.JPG",
+            "order": 0,
+            "useSystemDuration": false
+          },
+          {
+            "id": "ITEM-1770120069866-0.12370743480093405",
+            "name": "IMG_8886.JPG",
+            "type": "IMG",
+            "duration": {
+              "min": 0,
+              "sec": 3
+            },
+            "thumb": "/api/assets/stream?filename=IMG_8886.JPG",
+            "order": 1,
+            "useSystemDuration": false
+          },
+          {
+            "id": "ITEM-1770120071473-0.6505102336442087",
+            "name": "IMG_8891.JPG",
+            "type": "IMG",
+            "duration": {
+              "min": 0,
+              "sec": 3
+            },
+            "thumb": "/api/assets/stream?filename=IMG_8891.JPG",
+            "order": 2,
+            "useSystemDuration": false
+          }
+        ]
+      },
+      "playlist": []
+    }
+  ],
+  "lastModified": "2026-02-03T12:01:27.392Z"
+}
