@@ -1,0 +1,39 @@
+& 'D:\node-v24\npx' vite& 'D:\node-v24\npx' vite<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@19/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@19/umd/react-dom.development.js"></script>
+</head>
+<body class="bg-[#f8fafc]">
+    <div id="root"></div>
+    <script>
+        const { useState } = React;
+        
+        const App = () => {
+            const [count, setCount] = useState(0);
+            
+            return React.createElement('div', {
+                className: 'h-screen w-screen flex items-center justify-center'
+            }, [
+                React.createElement('h1', {
+                    className: 'text-4xl font-bold mb-4'
+                }, 'React Test'),
+                React.createElement('p', {
+                    className: 'text-xl mb-4'
+                }, `Count: ${count}`),
+                React.createElement('button', {
+                    className: 'bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg',
+                    onClick: () => setCount(count + 1)
+                }, 'Increment')
+            ]);
+        };
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>
